@@ -1,0 +1,21 @@
+{
+    "name": "ride/wra-orm-survey",
+    "description": "Survey extension for the ORM JSON API implementation of a Ride application",
+    "license": "MIT",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "Joris Vandeweerd",
+            "email": "joris@statik.be"
+        }
+    ],
+    "require": {
+        "ride/app-orm-survey": ">=0.1.0",
+        "ride/wra-orm": ">=0.1.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "ride\\web\\rest\\controller\\SurveyController": ["src/"],
+        }
+    }
+}

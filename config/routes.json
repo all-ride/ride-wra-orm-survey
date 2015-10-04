@@ -1,0 +1,18 @@
+{
+    "routes": [
+        {
+            "path": "/api/v1/survey-evaluations/%evaluation%/evaluate/%entry%",
+            "controller": "ride\\web\\rest\\controller\\SurveyController",
+            "action": "surveyEvaluateAction",
+            "id": "api.survey.evaluate",
+            "methods": "POST"
+        },
+        {
+            "path": "/api/v1/survey-likert-scales/%likert1%/compatible/%likert2%",
+            "controller": "ride\\web\\rest\\controller\\SurveyController",
+            "action": "likertCompatibleAction",
+            "id": "api.survey.likert.compatible",
+            "methods": "POST"
+        }
+    ]
+}
