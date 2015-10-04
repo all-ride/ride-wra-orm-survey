@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-0": {
-            "ride\\web\\rest\\controller\\SurveyController": ["src/"],
+            "ride\\web\\rest\\controller\\SurveyController": ["src/"]
         }
     }
 }
