@@ -4,9 +4,9 @@ namespace ride\web\rest\controller;
 
 use ride\library\orm\OrmManager;
 
-use ride\web\rest\controller\OrmModelController;
+use ride\web\rest\controller\OrmEntryController;
 
-class SurveyController extends OrmModelController {
+class SurveyController extends OrmEntryController {
 
     public function surveyEvaluateAction(OrmManager $orm, $evaluation, $entry) {
         $entryModel = $orm->getSurveyEntryModel();
