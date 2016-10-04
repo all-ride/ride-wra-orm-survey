@@ -29,8 +29,21 @@ class SurveyController extends OrmEntryController {
 
         $result = $evaluation->evaluate($entry);
 
+        $willLog = $this->request->getQueryParameter('log');
+        if ($willLog == 1 || $willLog == 'true') {
+            $evaluationLogModel = $orm->getSurveyEvaluationLogModel();
+
+            $evaluationLog = $evaluationLogModel->createEntry();
+            $evaluationLog->setEvaluation($evaluation);
+            $evaluationLog->setEntry($entry);
+            $evaluationLog->setScore($result->getScore());
+
+            $evaluationLogModel->save($evaluationLog);
+        }
+
         $this->document->setLink('self', $this->request->getUrl());
         $this->document->setResourceData($ruleModel->getMeta()->getOption('json.api'), $result->getRule());
+        $this->document->setMeta('average', (float) $evaluation->getAverageScore());
         $this->document->setMeta('score', $result->getScore());
     }
 
